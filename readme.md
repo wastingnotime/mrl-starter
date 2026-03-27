@@ -10,13 +10,27 @@ Use it to begin a new repository that follows the MRL loop:
 extract -> refine -> build -> egd -> release -> expose -> living -> extract
 ```
 
-The repository is intentionally generic. Replace the semantic docs and slice docs with material from your target domain.
+The default starter shape is:
+
+- Python
+- DDD-inspired modular monolith
+- repository-scoped skills under `.agents/skills/`
+- artifact-driven refinement workflow
+
+If you want to change those defaults, read `architecture.md`, `groundrules.md`, and `docs/operating/mrl_reference.md` first and record intentional deviations in `decisions.md`.
 
 ---
 
-## Start Here
+## Getting Started
 
-Read these files first:
+Clone the starter into the new repository name you want:
+
+```bash
+git clone <starter-url> my-new-project
+cd my-new-project
+```
+
+Then read these files first:
 
 - `docs/operating/mrl_reference.md`
 - `docs/operating/skills_workflow.md`
@@ -24,13 +38,14 @@ Read these files first:
 - `groundrules.md`
 - `docs/building/project_structure.md`
 
-Then:
+Then start the loop:
 
-1. fill `docs/semantics/model_hypothesis.md`
-2. fill `docs/semantics/domain_background_knowledge.md`
-3. define the first slice under `docs/slices/`
-4. implement one vertical slice only
-5. run deterministic tests and expectation review
+1. run `extract` to build the first semantic baseline in `docs/semantics/`
+2. run `refine` to define the first slice in `docs/slices/`
+3. run `build` to implement one vertical slice
+4. run `egd` to review the built behavior
+
+The semantic placeholders in `docs/semantics/` are intentionally empty. They are meant to be filled by the `extract` phase, not by copying domain content from this starter.
 
 ---
 
@@ -41,7 +56,7 @@ Then:
 /docs/operating/           # MRL model and workflow docs
 /docs/building/            # structure and bootstrap guidance
 /docs/evaluation/          # expectation-gap evaluation guidance
-/docs/semantics/           # domain-specific meaning to replace per project
+/docs/semantics/           # domain-specific meaning created by extract
 /docs/slices/              # one slice document per increment
 /src/app/                  # implementation root
 /tests/                    # executable specification

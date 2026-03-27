@@ -4,7 +4,7 @@
 
 This document defines the minimal portable shape for adopting the Model Refinement Lab in a new repository.
 
-Use it when creating a fresh project that should follow the same refinement discipline without copying domain-specific content from this repository.
+Use it when creating a fresh project that should follow the same refinement discipline without copying domain-specific content from this repository. The practical instantiation flow is to clone the starter into a new repository name and then let `extract` create the first semantic baseline.
 
 ---
 
@@ -89,7 +89,7 @@ A new repository should start with this order:
 
 1. define root strategic docs and `docs/operating/`
 2. install repo-local skills under `.agents/skills/`
-3. create empty semantic docs under `docs/semantics/`
+3. keep the semantic docs as placeholders under `docs/semantics/`
 4. run `extract` to build the first model baseline
 5. run `refine` to create the first slice
 6. run `build` to implement the first executable vertical slice
