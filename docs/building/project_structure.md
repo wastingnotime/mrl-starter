@@ -6,7 +6,12 @@ This document defines the intended folder layout and file responsibilities for t
 
 Its purpose is to give AI coding agents and humans a concrete structural map so implementation can evolve coherently without each contributor inventing a different organization.
 
-This structure should be treated as a strong default, not as an untouchable law. If a change becomes necessary, register the reasoning in `decisions.md`.
+The structure is split into:
+
+- MRL core artifacts that every adopting repository should keep
+- pack-specific implementation layouts that can vary by language and architecture
+
+If a change becomes necessary, register the reasoning in `decisions.md`.
 
 ---
 
@@ -44,39 +49,34 @@ project_root/
     building/
       bootstrap_plan.md
       project_structure.md
+    packs/
+      <selected_pack>.md
     evaluation/
       scenario_evaluation.md
     operating/
       mrl_reference.md
       mrl_starter.md
+      packs.md
       skills_workflow.md
     semantics/
       model_hypothesis.md
       domain_background_knowledge.md
     slices/
 
-  pyproject.toml
-  .python-version              # optional
+  pyproject.toml               # only when a Python pack uses it
+  package.json                 # only when a JavaScript/TypeScript pack uses it
+  go.mod                       # only when a Go pack uses it
+  .python-version              # optional and pack-specific
   .gitignore
   .env.example                 # only if needed later
 
-  src/
-    app/
-      domain/
-      application/
-      infrastructure/
-      interfaces/
+  src/                         # shaped by the selected pack
 
-  tests/
-    unit/
-    integration/
-    builders/
-    fixtures/
+  tests/                       # shaped by the selected pack
 
   scripts/
 
-  data/
-    sqlite/
+  data/                        # optional and pack-specific
 ```
 
 ---
@@ -103,7 +103,20 @@ Contains execution guidance for isolated skill-based workflows and the portable 
 
 - `docs/operating/mrl_reference.md`: compact MRL definition
 - `docs/operating/mrl_starter.md`: portable starter layout for new repositories
+- `docs/operating/packs.md`: pack model and selection rules
 - `docs/operating/skills_workflow.md`: skill execution model and artifact-driven loop
+
+### `docs/packs/`
+Contains pack definitions.
+
+Each pack file should define:
+
+- intended language or languages
+- architectural shape
+- repository layout
+- testing defaults
+- runtime targeting rules
+- pack-specific constraints
 
 ### `docs/evaluation/`
 Contains scenario-review design and evaluator guidance.
@@ -117,18 +130,18 @@ Contains business-language material used during analysis and evaluation.
 - `docs/semantics/domain_background_knowledge.md`: expectation-review context
 
 ### `src/`
-Contains production code.
+Contains production code shaped by the selected pack.
 
 ### `tests/`
-Contains executable specification and integration validation.
+Contains executable specification and integration validation shaped by the selected pack.
 
 ### `scripts/`
 Contains small runners or maintenance scripts useful for local development.
 
-### `data/sqlite/`
-Optional local persisted SQLite files for manual inspection or scenario runs.
+### `data/`
+Optional local persisted files for manual inspection or scenario runs.
 
-This directory should not hold mandatory production-like assets. It is for local labs and experiments.
+This directory should not hold mandatory production-like assets. It is for local labs and experiments and its substructure is pack-specific.
 
 ### `docs/`
 Contains implementation-adjacent documentation that should not live in the root strategic files.
@@ -139,6 +152,13 @@ Contains one document per vertical slice, including discovery scope, use-case co
 ---
 
 ## Source Tree
+
+```text
+src/
+  ... pack-specific code layout
+```
+
+### Example: `python_ddd_monolith` pack
 
 ```text
 src/
@@ -172,13 +192,30 @@ src/
       cli/
 ```
 
+### Example: `polyglot_client_server` pack
+
+```text
+src/
+  client/
+  server/
+  shared_contracts/
+
+tests/
+  client/
+  server/
+  integration/
+  contracts/
+```
+
 ---
 
-# 1. Domain Layer
+# 1. Pack-Specific Layers
 
 ## Purpose
 
-The domain layer contains the business model.
+The selected pack defines the concrete layers or modules inside `src/`.
+
+For the `python_ddd_monolith` pack, the domain layer contains the business model.
 
 It should represent:
 
@@ -917,7 +954,7 @@ If the answer is meaningful, register the change in `decisions.md`.
 
 ## Summary
 
-The default structure is organized by architectural responsibility:
+For the `python_ddd_monolith` pack, the structure is organized by architectural responsibility:
 
 - `domain` for business meaning
 - `application` for use-case orchestration and ports
@@ -927,4 +964,3 @@ The default structure is organized by architectural responsibility:
 - `scripts` for local convenience
 
 This structure exists to keep the project legible while the model is being refined.
-

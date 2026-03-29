@@ -10,14 +10,12 @@ Use it to begin a new repository that follows the MRL loop:
 extract -> refine -> build -> egd -> release -> expose -> living -> extract
 ```
 
-The default starter shape is:
+This starter separates:
 
-- Python
-- DDD-inspired modular monolith
-- repository-scoped skills under `.agents/skills/`
-- artifact-driven refinement workflow
+- MRL core: the artifact-driven refinement loop and workflow
+- implementation packs: selectable language and architecture defaults
 
-If you want to change those defaults, read `architecture.md`, `groundrules.md`, and `docs/operating/mrl_reference.md` first and record intentional deviations in `decisions.md`.
+The repository currently includes `python_ddd_monolith` as the example selected pack. If you want another shape such as Go, TypeScript, event sourcing, or a multi-runtime client/server system, keep the MRL core and replace the pack guidance intentionally.
 
 ---
 
@@ -34,6 +32,7 @@ Then read these files first:
 
 - `docs/operating/mrl_reference.md`
 - `docs/operating/skills_workflow.md`
+- `docs/operating/packs.md`
 - `architecture.md`
 - `groundrules.md`
 - `docs/building/project_structure.md`
@@ -54,11 +53,12 @@ The semantic placeholders in `docs/semantics/` are intentionally empty. They are
 ```text
 .agents/skills/            # repo-local MRL skills
 /docs/operating/           # MRL model and workflow docs
+/docs/packs/               # implementation pack definitions
 /docs/building/            # structure and bootstrap guidance
 /docs/evaluation/          # expectation-gap evaluation guidance
 /docs/semantics/           # domain-specific meaning created by extract
 /docs/slices/              # one slice document per increment
-/src/app/                  # implementation root
+/src/                      # implementation root shaped by the selected pack
 /tests/                    # executable specification
 ```
 
@@ -68,4 +68,5 @@ The semantic placeholders in `docs/semantics/` are intentionally empty. They are
 
 - Treat this repository as a template, not as a finished application.
 - Keep domain specifics out of the starter and in the adopting repository.
+- Keep the MRL loop generic and move language or architecture assumptions into packs.
 - Prefer one small slice over broad scaffolding.

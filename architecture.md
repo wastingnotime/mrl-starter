@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the architectural shape of the Python model-refinement project. Its goal is to give AI coding agents and humans a stable base for implementation decisions, naming, boundaries, and trade-offs.
+This document defines the architectural shape selected for this repository. Its goal is to give AI coding agents and humans a stable base for implementation decisions, naming, boundaries, and trade-offs without implying that one architecture is mandatory for all MRL repositories.
 
 This project is **not** intended to be a full production rewrite of the current system. It is a **model laboratory** used to:
 
@@ -14,9 +14,34 @@ This project is **not** intended to be a full production rewrite of the current 
 
 ---
 
+## MRL Core Versus Pack
+
+MRL itself is architecture-agnostic.
+
+The MRL core defines:
+
+- the refinement loop
+- the artifact chain
+- isolated phase execution
+- semantic and slice documents
+- evaluation and release discipline
+
+Implementation shape is selected through a pack.
+
+This repository currently adopts the `python_ddd_monolith` pack. Other repositories may instead adopt:
+
+- `typescript_application`
+- `go_service`
+- `event_sourced_domain`
+- `polyglot_client_server`
+
+If a repository changes pack, record the decision in `decisions.md` and update this document so it describes the selected shape rather than pretending to be a universal MRL rule.
+
+---
+
 ## Core Intent
 
-The system should behave like a **DDD-inspired modular monolith**.
+Within this repository, the system should behave like a **DDD-inspired modular monolith**.
 
 It should prefer:
 
@@ -28,9 +53,11 @@ It should prefer:
 
 This project is a **refinement environment**, not a microservices platform.
 
+That statement is local to this selected pack. MRL as a workflow does not require a modular monolith and can support multi-process or multi-runtime systems when the model requires them.
+
 ---
 
-## Architectural Style
+## Architectural Style For This Pack
 
 The project follows a layered approach:
 
@@ -71,6 +98,8 @@ tests/
   unit/
   integration/
 ```
+
+This is a pack-specific example, not a required layout for every MRL repository.
 
 ### Layer responsibilities
 
@@ -147,6 +176,27 @@ Examples:
 - ID generators
 
 Infrastructure exists to support the model, not define it.
+
+---
+
+## Multi-Runtime Guidance
+
+Some models span more than one runtime.
+
+Examples:
+
+- browser client plus Go server
+- simulation engine plus UI shell
+- event producer plus projection consumer
+
+In those cases:
+
+- keep one shared semantic model under `docs/semantics/`
+- let slice documents declare more than one runtime target
+- keep runtime boundaries explicit in contracts, messages, and events
+- do not force one code tree to pretend the system is single-runtime when it is not
+
+The pack may still define local boundaries for each runtime, but the semantic model stays shared unless the business itself diverges.
 
 ---
 
@@ -569,7 +619,7 @@ Recommended implementation order:
 
 ## Summary
 
-This project should be implemented as a **DDD-inspired modular monolith for model refinement**.
+This repository currently uses a **DDD-inspired modular monolith for model refinement**.
 
 Its main characteristics are:
 
@@ -584,4 +634,3 @@ Its main characteristics are:
 The goal is not to mirror the current system literally.
 
 The goal is to create a cleaner executable model that captures the real business behavior with lower accidental complexity.
-
