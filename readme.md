@@ -32,6 +32,8 @@ git clone <starter-url> my-new-project
 cd my-new-project
 ```
 
+The preferred way to start a new project is to use this repository as a GitHub template, not as a fork. Forking is more appropriate when working on the starter itself or maintaining a derivative starter.
+
 Then read these files first:
 
 - `docs/operating/mrl_reference.md`
