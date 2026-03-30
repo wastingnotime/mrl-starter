@@ -91,3 +91,18 @@ This metadata keeps the semantic model shared while making implementation placem
 - `polyglot_client_server`
 
 Repositories do not need all packs. They should define only the packs they actually intend to use.
+
+---
+
+## Creating A New Pack
+
+When promoting a new pack from a real project:
+
+1. build a few real slices first
+2. capture repeated language or architecture decisions
+3. separate reusable pack guidance from project-specific choices
+4. create a new file under `docs/packs/`
+5. update this document to list the new pack
+6. record the pack decision in `decisions.md`
+
+Use `docs/packs/_template.md` as the canonical example when creating a new pack document.
