@@ -17,6 +17,8 @@ This starter separates:
 
 The repository currently includes `python_ddd_monolith` as the example selected pack. If you want another shape such as Go, TypeScript, event sourcing, or a multi-runtime client/server system, keep the MRL core and replace the pack guidance intentionally.
 
+One of the repository's main characteristics is that pre-defined packs can be used to scaffold new MRL projects. That lets adopters keep the same refinement workflow while starting from a language and architecture shape that already fits their context.
+
 ---
 
 ## Getting Started
