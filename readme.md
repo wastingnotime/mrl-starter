@@ -19,6 +19,8 @@ The repository currently includes `python_ddd_monolith` as the example selected 
 
 One of the repository's main characteristics is that pre-defined packs can be used to scaffold new MRL projects. That lets adopters keep the same refinement workflow while starting from a language and architecture shape that already fits their context.
 
+MRL itself is AI-agent-friendly rather than tool-specific, but this starter is currently optimized for Codex-style repository workflows. It can still be used well with other AI coding agents when they operate from explicit repository artifacts instead of conversational memory.
+
 ---
 
 ## Getting Started
