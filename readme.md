@@ -39,6 +39,7 @@ Then read these files first:
 - `docs/operating/mrl_reference.md`
 - `docs/operating/skills_workflow.md`
 - `docs/operating/packs.md`
+- `docs/operating/best_practices.md`
 - `architecture.md`
 - `groundrules.md`
 - `docs/building/project_structure.md`

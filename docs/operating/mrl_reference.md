@@ -113,7 +113,7 @@ Use a fresh session or isolated run per phase whenever practical.
 
 To make MRL portable to a fresh repository, keep the framework generic and move domain-specific material into semantic docs and slice docs.
 
-Use `docs/operating/mrl_starter.md` as the starter layout for new repositories.
+Use `docs/operating/mrl_starter.md` as the starter layout for new repositories. Use `docs/operating/best_practices.md` for practical guidance such as architecture timing and phase discipline.
 
 MRL portability does not require one implementation language or one architecture.
 

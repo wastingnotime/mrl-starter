@@ -4,7 +4,7 @@
 
 This document defines how skills should be used inside the Model Refinement Lab. Read `docs/operating/mrl_reference.md` first when a compact restatement of the model is needed.
 
-The goal is to preserve phase isolation, reduce hidden assumptions, and keep model refinement reproducible.
+The goal is to preserve phase isolation, reduce hidden assumptions, and keep model refinement reproducible. See `docs/operating/best_practices.md` for practical phase guidance such as when architecture decisions should move from `extract` to `refine`.
 
 ---
 
