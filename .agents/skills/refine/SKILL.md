@@ -25,6 +25,12 @@ Turn extracted evidence and semantic hypotheses into one explicit slice definiti
 - semantic and architectural docs
 - relevant code only when needed to understand current boundaries
 
+# Model Guidance
+
+- prefer a strong general reasoning model for this skill
+- if model selection is available, use a frontier reasoning model rather than a speed-optimized coding model
+- use a coding-focused model only when repository structure or nearby implementation details dominate the refinement work
+
 # Must Do
 
 - identify the bounded change to implement next

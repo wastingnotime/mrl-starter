@@ -23,6 +23,12 @@ Implement one bounded slice from the repository artifacts.
 - current repository code
 - architectural and structural guidance
 
+# Model Guidance
+
+- prefer a Codex-class coding model for this skill
+- if model selection is available, `gpt-5.3-codex` is a good default for implementation-heavy work
+- use a smaller or faster model only for narrow, low-risk changes
+
 # Must Do
 
 - implement the slice in code

@@ -23,6 +23,12 @@ Capture relevant external or newly observed signals and turn them into explicit 
 - runtime evidence
 - broad domain references
 
+# Model Guidance
+
+- prefer a strong general reasoning model for this skill
+- optimize for synthesis accuracy and traceability over raw coding speed
+- use a coding-focused model only when the extraction task is mostly about interpreting source code rather than stakeholder or domain material
+
 # Must Do
 
 - identify which external signals matter to the loop
