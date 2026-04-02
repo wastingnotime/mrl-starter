@@ -64,3 +64,24 @@ Keep one universal Python starter and treat every other shape as an undocumented
 
 ### Notes
 Future pack additions should live under `docs/packs/` and should be referenced by slice documents when the runtime topology matters.
+
+## DEC-0002 - Treat Skill Model Guidance As Advisory
+
+- Date: 2026-04-02
+- Status: accepted
+- Owners: both
+
+### Context
+The repository skills now include model guidance for tasks such as `build`, `refine`, and `extract`. That creates a potential ambiguity: a reader could assume that naming a preferred model in a skill will automatically switch the active Codex model or force sub-agent routing during execution.
+
+### Decision
+Model guidance inside repository skills is advisory only. It documents which model shape is usually a good fit for the task, but it does not by itself require automatic model switching, worker spawning, or hard routing behavior.
+
+### Consequences
+The skills remain durable even if model names, availability, or routing capabilities change. The repository gains clearer guidance for future operators and tooling, but predictable model selection still requires explicit runtime policy or orchestration outside the skill text.
+
+### Alternatives considered
+Encode specific model names in skills as if they were enforced execution rules. This was rejected because skill text alone does not guarantee runtime behavior and would overstate what the repository can currently control.
+
+### Notes
+If the repository later wants deterministic skill-to-model routing, document that as a separate operational decision and implement it in the calling workflow or agent orchestration layer.
