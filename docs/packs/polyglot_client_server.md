@@ -47,3 +47,6 @@ tests/
 - browser client plus Go or Python server
 - game logic split across client prediction and server authority
 - shared event or message contracts across runtimes
+
+When using this pack, also check `docs/evaluation/validation_modes.md`.
+Many client/server repositories are not only split by runtime but also by validation surface, and some slices need interaction-assisted or interaction-dependent inspection to detect expectation gaps well.

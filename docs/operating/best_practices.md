@@ -112,3 +112,24 @@ This separation keeps:
 - `build` execution-oriented
 
 That usually reduces accidental early lock-in and makes architecture easier to evolve.
+
+---
+
+## Validation Surface
+
+Do not assume every slice should be validated the same way.
+
+Some systems are mostly validated through structural evidence such as tests, logs, and state inspection.
+Others need interaction, timing, and lived use to expose expectation gaps reliably.
+
+Use `docs/evaluation/validation_modes.md` to classify whether the current project or slice is:
+
+- headless-first
+- interaction-assisted
+- interaction-dependent
+
+This affects:
+
+- how slices should be scoped
+- how often built artifacts should be run and inspected
+- whether frontend and backend should stay closely coupled during construction
