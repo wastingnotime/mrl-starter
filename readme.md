@@ -44,6 +44,8 @@ Then read these files first:
 - `groundrules.md`
 - `docs/building/project_structure.md`
 
+Before writing substantial project-specific code, decide whether the adopting repository will keep the starter's default license or intentionally replace it with another license or a split-license model. Record that choice clearly in the root `LICENSE` and `decisions.md`.
+
 Then start the loop:
 
 1. run `extract` to build the first semantic baseline in `docs/semantics/`
@@ -76,4 +78,5 @@ The semantic placeholders in `docs/semantics/` are intentionally empty. They are
 - Treat this repository as a template, not as a finished application.
 - Keep domain specifics out of the starter and in the adopting repository.
 - Keep the MRL loop generic and move language or architecture assumptions into packs.
+- Make licensing an explicit adoption choice; the starter can be reused under one license or adapted into a split-license repository when process material and implementation code need different terms.
 - Prefer one small slice over broad scaffolding.
