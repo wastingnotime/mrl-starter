@@ -47,7 +47,7 @@ Turn extracted signals into bounded model hypotheses and slice definitions.
 Implement one slice in code with deterministic tests.
 
 ### `egd`
-Run expectation-gap detection against realistic execution evidence.
+Run expectation-gap detection against realistic execution evidence. Default to lightweight artifact-led review first, and prefer fuller Ollama-backed scenario evaluation once deterministic scenario evidence exists.
 
 ### `release`
 Accept the current state as the intended internal version.

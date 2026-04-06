@@ -118,7 +118,7 @@ The table below defines the current recommended agent, context, inputs, outputs,
 | `extract` | `gpt-5.4` `medium` | external-domain analyst | current `docs/semantics/model_hypothesis.md`, current `docs/semantics/domain_background_knowledge.md`, relevant external material | external code, external docs, stakeholder requests, runtime evidence | updated `docs/semantics/model_hypothesis.md`, updated `docs/semantics/domain_background_knowledge.md`, optional `request.md` | design implementation prematurely or write production code |
 | `refine` | `gpt-5.4` `medium` | model-to-slice designer | `docs/semantics/model_hypothesis.md`, `architecture.md`, `groundrules.md`, `decisions.md` | `request.md`, semantic docs, relevant code | `docs/slices/<specific_slice>.md`, optional `impact_analysis.md` | write code or silently invent business rules |
 | `build` | `gpt-5.3-codex` `medium` | slice implementer | `docs/building/project_structure.md`, `architecture.md`, `groundrules.md`, `decisions.md` | `docs/slices/<specific_slice>.md` | code, tests, optional `implementation.md` | redefine semantic docs unless the slice explicitly requires it |
-| `egd` | `gpt-5.4` `medium` plus optional local `llama3` reviewer | expectation-gap reviewer | `docs/semantics/model_hypothesis.md`, `docs/semantics/domain_background_knowledge.md`, `docs/evaluation/scenario_evaluation.md` | `docs/slices/<specific_slice>.md`, scenario outputs, test outputs, implementation artifacts | `runs/<slice>/<timestamp>/...`, optional `egd.md` | modify code or patch behavior directly |
+| `egd` | `gpt-5.4` `medium` plus optional local `llama3` reviewer | expectation-gap reviewer | `docs/semantics/model_hypothesis.md`, `docs/semantics/domain_background_knowledge.md`, `docs/evaluation/scenario_evaluation.md` | `docs/slices/<specific_slice>.md`, test outputs, implementation artifacts, optional scenario evidence packet | `egd.md`, optional `runs/<slice>/<timestamp>/...` | modify code or patch behavior directly |
 | `release` | `gpt-5.4` `medium` | acceptance and regression judge | slice definition, implementation summary, test results, EGD outputs, decisions | `docs/slices/<specific_slice>.md`, regression results, EGD report | `regression_diff.md`, `release_decision.md` | reduce the phase to raw test execution only |
 
 Notes:
@@ -126,6 +126,9 @@ Notes:
 - `extract` should usually produce or update both semantic reference docs, not only one.
 - `refine` is where slice design becomes explicit; `extract` should stop earlier.
 - `egd` may use a smaller local model such as `llama3` for first-pass review, but interpretation and loop decisions should remain explicit.
+- `egd` defaults to a lightweight artifact-led review when the current slice does not yet have a dedicated deterministic scenario runner and evidence packet.
+- in lightweight mode, Codex reviews semantic artifacts, implementation artifacts, and fresh test evidence directly and records the result in `egd.md` without pretending that a fuller scenario-evaluation run occurred.
+- once a slice has a deterministic scenario packet, prefer the fuller Ollama-backed evaluation flow described in `docs/evaluation/scenario_evaluation.md`.
 - `release` should end with a decision, not only a diff artifact.
 
 ---
@@ -215,17 +218,23 @@ Notes:
 - detect mismatch between expected and actual behavior
 - identify plausible omissions, weak outcomes, or semantically incomplete behavior
 
+**Default modes**
+
+- lightweight artifact-led review is the normal default for earlier slices
+- fuller Ollama-backed scenario evaluation is preferred once deterministic scenario infrastructure exists
+
 **Input**
 
-- `request.md`
-- `hypothesis.md`
-- `implementation.md`
-- runtime or test outputs
-- expectation review artifacts
+- semantic docs
+- slice definition
+- implementation artifacts
+- fresh test evidence
+- optional deterministic scenario evidence packet
 
 **Output**
 
 - `egd.md`
+- optional scenario-evaluation artifacts under `runs/<slice>/<timestamp>/...`
 - recommendation: return to extract, return to refine, return to build, or continue
 
 **Must not**

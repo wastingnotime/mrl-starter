@@ -130,9 +130,24 @@ Findings should be treated as:
 - suspicions
 - prompts for refinement discussion
 
+`egd` defaults to a lightweight artifact-led review when the current slice does not yet have a dedicated deterministic scenario runner and evidence packet.
+In lightweight mode, Codex reviews semantic artifacts, implementation artifacts, and fresh test evidence directly and records the result in `egd.md` without pretending that a fuller scenario-evaluation run occurred.
+
+Once a slice has a deterministic scenario packet, prefer the fuller Ollama-backed evaluation flow.
+
+This is a two-level default:
+
+1. lightweight EGD for earlier slices
+2. fuller Ollama-backed scenario evaluation once deterministic scenario infrastructure exists
+
+The lightweight mode is not a fallback failure state.
+It is the normal earlier-stage evaluation mode.
+
 ---
 
 ## Recommended Evaluation Architecture
+
+This section describes the fuller Ollama-backed flow that becomes preferred once a slice has deterministic scenario-execution infrastructure and an evidence packet worth reviewing.
 
 Use a **two-step architecture**.
 
@@ -182,6 +197,8 @@ There is no stricter hardware requirement defined in this repository yet.
 The current working assumption is a local machine capable of running Ollama comfortably, for example a Ryzen-class workstation with 32 GB RAM.
 
 That is a practical starting point, not a hard requirement.
+
+If this minimum setup does not yet exist for the current slice, do lightweight EGD instead of pretending a fuller scenario evaluation occurred.
 
 ---
 
@@ -797,4 +814,3 @@ The local Ollama reviewer should therefore be treated as:
 - a detector of possible omissions
 
 Its findings must be reviewed by humans and/or Codex before changing the model.
-
