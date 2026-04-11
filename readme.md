@@ -56,6 +56,8 @@ Then start the loop:
 The semantic placeholders in `docs/semantics/` are intentionally empty. They are meant to be filled by the `extract` phase, not by copying domain content from this starter.
 Preserve original evidence in `work/sources/` before extraction or refinement artifacts are produced elsewhere.
 
+For repositories that expect to use `expose`, released artifacts should normally be packaged in a portable runtime form, with a container image as the default. That packaging rule belongs to MRL operating guidance rather than to any specific adopting repository's domain semantics.
+
 ---
 
 ## Starter Layout

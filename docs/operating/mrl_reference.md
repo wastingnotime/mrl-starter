@@ -55,6 +55,12 @@ Accept the current state as the intended internal version.
 ### `expose`
 Put the released state into contact with a real context.
 
+Default operating rule:
+
+- if a released artifact is intended for `expose`, it should normally be packaged in a portable runtime form
+- the default portable form is a container image unless the adopting repository has a better justified deployment artifact
+- packaging for `expose` is a lifecycle concern, not a domain-semantics concern
+
 ### `living`
 Capture the feedback, friction, surprises, and drift created by exposure.
 

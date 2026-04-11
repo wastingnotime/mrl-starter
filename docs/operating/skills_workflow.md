@@ -277,6 +277,7 @@ Notes:
 
 - released version
 - exposure plan or target context
+- exposure-ready artifact, normally packaged as a container image unless another portable runtime artifact is explicitly justified
 
 **Output**
 
@@ -287,6 +288,7 @@ Notes:
 
 - be treated as long-term operation
 - be confused with release itself
+- assume source code alone is the exposure artifact when a portable runtime artifact should exist
 
 ### 7. Living
 
