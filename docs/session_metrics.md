@@ -92,3 +92,34 @@ They are operational hints for the shape of the work, not truth about the value 
 * productivity is interpreted cumulatively from repository start through `2026-04-05`
 * `git log --until 2026-04-05` shows no `feat:` commits in `mrl-starter`, so no delivered slice was counted for that cumulative window
 * the same cumulative history shows seven `docs:` commits, so this measurement reflects documentation and method-shaping work rather than slice delivery
+
+---
+
+## Session - 20260412
+
+### Raw
+
+* total_tokens: 698633
+* input_tokens: 670061
+* cached_tokens: 6022784
+* output_tokens: 28572
+* reasoning_tokens: 2561
+
+### Derived
+
+* output_efficiency: 4.09%
+* reasoning_efficiency: 8.96%
+* cache_ratio: 8.99x
+
+### Productivity
+
+* slices_applied: 0
+* tokens_per_slice: n/a
+* docs_commits: 10
+
+### Notes
+
+* historical measurement recorded from `mrl-starter`
+* productivity is interpreted cumulatively from repository start through `2026-04-12`
+* `git log --until 2026-04-12` shows no `feat:` commits in `mrl-starter`, so no delivered slice was counted for that cumulative window
+* the same cumulative history shows ten `docs:` commits, so this measurement reflects documentation and method-shaping work rather than slice delivery
