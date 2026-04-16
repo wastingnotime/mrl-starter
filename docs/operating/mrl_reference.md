@@ -34,7 +34,7 @@ MRL is a refinement loop.
 ## Canonical Loop
 
 ```text
-extract -> refine -> build -> egd -> release -> expose -> living -> extract
+extract -> refine -> build -> egd -> release -> expose -> feedback -> extract
 ```
 
 ### `extract`
@@ -61,7 +61,7 @@ Default operating rule:
 - the default portable form is a container image unless the adopting repository has a better justified deployment artifact
 - packaging for `expose` is a lifecycle concern, not a domain-semantics concern
 
-### `living`
+### `feedback`
 Capture the feedback, friction, surprises, and drift created by exposure.
 
 ---

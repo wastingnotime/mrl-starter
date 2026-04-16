@@ -146,7 +146,7 @@ Examples:
 - trace query reference
 - logging dataset or schema reference
 
-### `living`
+### `feedback`
 
 Capture which signals were missing, noisy, misleading, too expensive, or insufficient once the system interacted with reality.
 

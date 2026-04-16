@@ -7,7 +7,7 @@ This repository is a starter template for the Model Refinement Lab.
 Use it to begin a new repository that follows the MRL loop:
 
 ```text
-extract -> refine -> build -> egd -> release -> expose -> living -> extract
+extract -> refine -> build -> egd -> release -> expose -> feedback -> extract
 ```
 
 This starter separates:

@@ -231,7 +231,7 @@ Describe what exposure achieved in concrete terms.
 
 ## Next Loop Impact
 
-- continue to `living`
+- continue to `feedback`
 - return to `extract`
 - return to `refine`
 - return to `build`
