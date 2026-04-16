@@ -133,3 +133,34 @@ Treat every exposure path as ad hoc per change, or encode remote deployment beha
 
 ### Notes
 An adopting repository that uses one expose extension as its normal path should add its own accepted decision naming that extension and defining what counts as exposure completion for that repository.
+
+## DEC-0005 - Treat Consumer-Facing Interfaces As Exposed Contracts
+
+- Date: 2026-04-16
+- Status: accepted
+- Owners: both
+
+### Context
+Some repositories or repository families expose APIs, emitted events, webhooks, or other integration interfaces that downstream consumers need to discover and rely on across releases. A runtime artifact alone is not enough when consumers also need to know which interfaces exist, which payloads are offered, and whether a change is breaking, additive, or internal-only.
+
+### Decision
+The starter recognizes exposed contracts as a repository-level architectural policy for consumer-facing interfaces.
+
+When a repository adopts this policy:
+
+- externally consumable interfaces are treated as part of the exposed surface
+- tracked contract artifacts should live in explicit repository locations
+- contract artifacts should be produced or updated during `build`
+- contract compatibility should be reviewed during `release`
+- exposure evidence should reference the released contract artifacts during `expose`
+
+This guidance is captured in `docs/operating/exposed_contracts.md`.
+
+### Consequences
+Repositories that expose consumer-facing interfaces can make those surfaces discoverable and governable across releases. This improves compatibility review and downstream reuse, but it also creates an obligation to keep contract artifacts synchronized with implementation and release evidence.
+
+### Alternatives considered
+Treat APIs and events as discoverable only through code, runtime inspection, or informal documentation after exposure. This was rejected because consumers need a clearer and more durable contract surface than reverse engineering can provide.
+
+### Notes
+This is not a mandatory rule for every MRL repository. It is intended for repositories or repository families whose released artifacts are expected to be consumed through explicit interfaces.
