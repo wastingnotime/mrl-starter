@@ -106,3 +106,30 @@ Keep `.codex` as a first-class part of the repository workflow immediately. This
 
 ### Notes
 If future evidence shows that MRL depends on stable capabilities from a specific AI tool, record a follow-up decision describing the required coupling, why generic artifacts were insufficient, and which tool-specific assets should become part of the repository.
+
+## DEC-0004 - Separate Expose Extensions From Packs
+
+- Date: 2026-04-16
+- Status: accepted
+- Owners: both
+
+### Context
+Some adopting repositories will repeatedly expose accepted artifacts through the same remote infrastructure path, such as GitHub Actions, container publication, and a handoff to a separate infrastructure repository. That recurring shape should be reusable, but it does not belong in MRL core and does not cleanly fit the repository's definition of an implementation pack.
+
+### Decision
+The repository distinguishes expose extensions from implementation packs.
+
+Expose extensions are repository-local lifecycle guides for recurring exposure mechanisms. They define how accepted released artifacts are exposed into a real target context, how handoff boundaries are described, and which evidence artifacts should be recorded.
+
+Implementation packs remain responsible for implementation defaults such as language, architecture, structure, testing layout, and runtime topology.
+
+The starter provides generic guidance in `docs/operating/expose_extensions.md`, a concrete example extension in `docs/operating/extensions/expose_aws_ecr_infra_pr.md`, and a reusable per-change template in `work/changes/_template/exposure.md`.
+
+### Consequences
+Repositories can standardize recurring exposure mechanisms without redefining the MRL loop and without overloading packs with lifecycle behavior. Adopting repositories must still record their chosen expose extension and repository-specific exposure boundary in their own decisions and change artifacts.
+
+### Alternatives considered
+Treat every exposure path as ad hoc per change, or encode remote deployment behavior as a pack. These were rejected because recurring exposure paths deserve explicit reuse while remaining separate from implementation defaults.
+
+### Notes
+An adopting repository that uses one expose extension as its normal path should add its own accepted decision naming that extension and defining what counts as exposure completion for that repository.
