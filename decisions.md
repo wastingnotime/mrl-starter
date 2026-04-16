@@ -164,3 +164,34 @@ Treat APIs and events as discoverable only through code, runtime inspection, or 
 
 ### Notes
 This is not a mandatory rule for every MRL repository. It is intended for repositories or repository families whose released artifacts are expected to be consumed through explicit interfaces.
+
+## DEC-0006 - Treat Key Operational Telemetry As An Exposed Surface
+
+- Date: 2026-04-16
+- Status: accepted
+- Owners: both
+
+### Context
+Some repositories or repository families are expected to be operated through metrics, health signals, traces, and structured logs. If those signals are only discovered after deployment inside an APM or logging platform, the operational surface becomes accidental and hard to review. Metrics are especially contract-like when dashboards, alerts, SLOs, autoscaling, or external analysis depend on specific names, labels, and meanings.
+
+### Decision
+The starter recognizes exposed observability as a repository-level architectural policy for operationally relied-on telemetry.
+
+When a repository adopts this policy:
+
+- key operational telemetry is treated as part of the exposed surface
+- observability artifacts should be documented in explicit repository locations
+- key signal definitions should be produced or updated during `build`
+- meaningful observability changes should be reviewed during `release`
+- exposure evidence should reference the operational signal locations during `expose`
+
+This guidance is captured in `docs/operating/exposed_observability.md`.
+
+### Consequences
+Repositories can make their operational surface more intentional before exposure instead of relying on post-deploy discovery alone. This improves operator clarity and compatibility review, but it also creates an obligation to keep important telemetry definitions synchronized with implementation and release evidence.
+
+### Alternatives considered
+Treat observability as a runtime-only concern discovered inside an APM after deployment. This was rejected because important telemetry surfaces, especially metrics and health signals, are often stable enough to deserve explicit review and documentation.
+
+### Notes
+This is not a mandatory rule for every MRL repository. It is intended for repositories or repository families whose running systems are expected to be monitored and consumed through stable operational signals.
