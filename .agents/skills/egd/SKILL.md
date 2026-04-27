@@ -14,12 +14,14 @@ Detect expectation gaps between the requested change, built behavior, and the se
 - `docs/semantics/model_hypothesis.md`
 - `docs/semantics/domain_background_knowledge.md`
 - relevant `work/changes/<id>/request.md`
+- relevant `work/changes/<id>/request_slice_map.md`
 - `docs/slices/<specific_slice>.md`
 - relevant implementation and scenario artifacts
 
 # Inputs
 
 - `work/changes/<id>/request.md`
+- `work/changes/<id>/request_slice_map.md`
 - `docs/slices/<specific_slice>.md`
 - runtime outputs
 - scenario transcripts

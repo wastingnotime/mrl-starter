@@ -11,6 +11,7 @@ Decide whether the current request state should be accepted as the internal rele
 
 - `docs/operating/skills_workflow.md`
 - relevant `work/changes/<id>/request.md`
+- relevant `work/changes/<id>/request_slice_map.md`
 - `docs/slices/<specific_slice>.md`
 - relevant `implementation.md`
 - relevant `egd.md`
@@ -20,6 +21,7 @@ Decide whether the current request state should be accepted as the internal rele
 # Inputs
 
 - `work/changes/<id>/request.md`
+- `work/changes/<id>/request_slice_map.md`
 - relevant `docs/slices/<specific_slice>.md`
 - implementation evidence
 - test results

@@ -137,7 +137,7 @@ Contains business-language material used during analysis and evaluation.
 Contains tracked working artifacts that preserve loop traceability without promoting every intermediate artifact into `docs/`.
 
 - `work/sources/`: canonical folder for curated raw evidence and original source material
-- `work/changes/`: bounded request artifacts and phase-local handoff material tied to a specific change
+- `work/changes/`: bounded request artifacts and phase-local handoff material tied to a specific change, including request-to-slice maps when refinement has occurred
 
 `work/` is repository memory, not personal scratch space.
 Preserve original evidence in `work/sources/` before extraction or refinement artifacts are produced elsewhere.

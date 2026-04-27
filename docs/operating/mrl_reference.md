@@ -80,6 +80,7 @@ Typical artifact chain:
 request.md
   -> docs/semantics/model_hypothesis.md
   -> docs/semantics/domain_background_knowledge.md
+  -> work/changes/<id>/request_slice_map.md
   -> docs/slices/<slice>.md
   -> code + tests + implementation notes
   -> runs/<request-or-change-id>/<timestamp>/...

@@ -103,7 +103,7 @@ A new repository should start with this order:
 4. select or define a pack and record it in `decisions.md`
 5. keep the semantic docs as placeholders under `docs/semantics/`
 6. run `extract` to build the first model baseline
-7. run `refine` to create the first slice
+7. run `refine` to create the first request-to-slice map and slice
 8. run `build` to implement the first executable vertical slice
 9. run `egd` against the request before deciding `release`
 

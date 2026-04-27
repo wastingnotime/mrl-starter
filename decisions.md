@@ -237,3 +237,24 @@ Keep EGD slice-oriented and rely on release to detect request-level gaps. This w
 
 ### Notes
 A request may still map to a single slice. In that case, request-level EGD should be lightweight and can use the one slice as its main evidence packet.
+
+## DEC-0009 - Track Request-To-Slice Mapping During Refine
+
+- Date: 2026-04-27
+- Status: accepted
+- Owners: both
+
+### Context
+After making EGD request-centered, the workflow needs an explicit handoff from request intent to slice execution. Without a durable map, build can remain slice-local while EGD and release have to reconstruct how those slices were supposed to satisfy the request.
+
+### Decision
+`refine` should maintain `work/changes/<id>/request_slice_map.md` whenever a request artifact exists. The map records whether the request is covered by one slice or multiple slices, what each slice covers, what is out of scope, and which evidence should support request-level EGD and release.
+
+### Consequences
+Build can stay bounded by slice while still preserving traceability back to request intent. EGD and release gain a direct artifact for checking whether the built slices add up to the requested change. Refinement has one more artifact to maintain, but it removes ambiguity at the phase boundary.
+
+### Alternatives considered
+Store this mapping only inside each slice document or rely on `impact_analysis.md`. This was rejected because the request-to-slice relationship is a cross-slice concern and deserves a stable per-change artifact.
+
+### Notes
+For a one-slice request, the map should still exist but can be short.
