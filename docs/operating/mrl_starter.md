@@ -69,6 +69,8 @@ project_root/
       release/
       expose/
       feedback/
+      adoption-diagnose/
+      guidance/
 
   docs/
     operating/
@@ -108,6 +110,9 @@ A new repository should start with this order:
 9. run `egd` against the request before deciding `release`
 
 After each completed and verified repository change, commit the result with a focused Conventional Commit before starting unrelated work. This keeps the starter's artifact memory aligned with Git history instead of relying on an operator's active working tree.
+
+Run `adoption-diagnose` before substantial project-specific work when you want to verify that starter defaults such as licensing, README content, and pack selection have been intentionally handled.
+Use `guidance` when the repository owner has questions about MRL phases, artifacts, or boundaries and needs advice rather than file changes.
 
 ## Licensing Guidance For Adopters
 

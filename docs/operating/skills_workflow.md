@@ -43,10 +43,12 @@ Strong isolation improves:
 
 ## Repository Skills
 
-Repository-scoped skills should live under `.agents/skills/` with one folder per loop phase.
+Repository-scoped skills should live under `.agents/skills/` with one folder per loop phase or support role.
 
 ```text
 .agents/skills/
+  adoption-diagnose/
+    SKILL.md
   extract/
     SKILL.md
   refine/
@@ -61,9 +63,17 @@ Repository-scoped skills should live under `.agents/skills/` with one folder per
     SKILL.md
   feedback/
     SKILL.md
+  guidance/
+    SKILL.md
 ```
 
-Each skill should remain phase-bounded and artifact-driven.
+Canonical loop skills should remain phase-bounded and artifact-driven.
+Support skills should remain role-bounded and artifact-driven.
+
+Support skills currently include:
+
+- `adoption-diagnose`: audits whether a repository has intentionally adopted the starter through project-specific README, licensing, decisions, pack selection, and semantic artifacts
+- `guidance`: answers owner/operator questions about MRL from repository artifacts without modifying files
 
 ---
 
@@ -73,6 +83,9 @@ When bootstrapping MRL in a fresh repository, use `docs/operating/mrl_starter.md
 
 Starter repositories should include `work/sources/` up front as the canonical folder for curated raw evidence and original source material so `extract` does not have to invent that convention later.
 Treat `work/` as repository memory rather than scratch space.
+
+Use `adoption-diagnose` when an adopting repository needs to check whether starter defaults have been intentionally replaced.
+Use `guidance` when the owner needs help choosing a phase, interpreting an artifact, or understanding MRL policy without changing repository files.
 
 ---
 

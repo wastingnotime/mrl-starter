@@ -104,7 +104,7 @@ Use the repository in layers:
 
 ## Skills and Isolation
 
-Repository-scoped skills under `.agents/skills/` execute the loop in isolated contexts.
+Repository-scoped skills under `.agents/skills/` execute the loop or support repository operation in isolated contexts.
 
 Each skill should define:
 
@@ -115,6 +115,8 @@ Each skill should define:
 - forbidden actions
 
 Use a fresh session or isolated run per phase whenever practical.
+
+Support skills may sit outside the canonical loop when they preserve the same artifact discipline. Examples include adoption diagnosis for starter readiness and guidance for answering MRL operating questions without modifying repository state.
 
 ---
 

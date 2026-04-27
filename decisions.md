@@ -279,3 +279,27 @@ Keep release slice-oriented and rely on EGD to report request-level gaps. This w
 
 ### Notes
 When a request maps to exactly one slice, the release evidence may be short but should still name the request being accepted.
+
+## DEC-0011 - Add Adoption Diagnosis And Guidance Skills
+
+- Date: 2026-04-27
+- Status: accepted
+- Owners: both
+
+### Context
+Adopting repositories need help distinguishing MRL starter material from project-specific decisions. Two recurring needs do not fit the canonical loop phases: auditing whether starter defaults have been intentionally replaced, and helping an owner understand MRL workflow choices without changing files.
+
+### Decision
+Add two support skills outside the canonical loop:
+
+- `adoption-diagnose`, which audits adoption readiness around licensing, README content, pack selection, project-specific artifacts, and starter residue
+- `guidance`, which answers owner/operator questions about MRL phases, artifacts, skills, and boundaries from repository evidence without mutating files
+
+### Consequences
+The starter gains a clearer adoption path for repository owners while keeping the canonical loop unchanged. Support skills must remain role-bounded and artifact-driven so they do not become hidden workflow state or broad autonomous agents.
+
+### Alternatives considered
+Fold these responsibilities into `extract` or `refine`. This was rejected because adoption readiness and owner guidance are operational support concerns rather than semantic extraction or slice design.
+
+### Notes
+`adoption-diagnose` may write `work/adoption_diagnosis.md` when a durable report is useful. `guidance` is read-only by default.

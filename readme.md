@@ -49,9 +49,11 @@ Before writing substantial project-specific code, decide whether the adopting re
 Then start the loop:
 
 1. run `extract` to build the first semantic baseline in `docs/semantics/`
-2. run `refine` to define the first slice in `docs/slices/`
+2. run `refine` to define the first request-to-slice map and slice
 3. run `build` to implement one vertical slice
-4. run `egd` to review the built behavior
+4. run `egd` to review the built behavior against the request
+
+Use `adoption-diagnose` when you want to check whether the copied starter has been intentionally adopted, especially around licensing, README content, pack selection, and placeholder artifacts. Use `guidance` when the repository owner needs help understanding MRL phases or artifacts without changing files.
 
 The semantic placeholders in `docs/semantics/` are intentionally empty. They are meant to be filled by the `extract` phase, not by copying domain content from this starter.
 Preserve original evidence in `work/sources/` before extraction or refinement artifacts are produced elsewhere.
@@ -72,6 +74,7 @@ For repositories that expect to use `expose`, released artifacts should normally
 /docs/slices/              # one slice document per increment
 /work/sources/             # canonical folder for curated raw evidence and original source material
 /work/changes/             # request, impact, and implementation artifacts
+/work/adoption_diagnosis.md # optional adoption readiness report
 /src/                      # implementation root shaped by the selected pack
 /tests/                    # executable specification
 ```

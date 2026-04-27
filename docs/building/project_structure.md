@@ -138,6 +138,7 @@ Contains tracked working artifacts that preserve loop traceability without promo
 
 - `work/sources/`: canonical folder for curated raw evidence and original source material
 - `work/changes/`: bounded request artifacts and phase-local handoff material tied to a specific change, including request-to-slice maps when refinement has occurred
+- `work/adoption_diagnosis.md`: optional adoption readiness report produced by `adoption-diagnose`
 
 `work/` is repository memory, not personal scratch space.
 Preserve original evidence in `work/sources/` before extraction or refinement artifacts are produced elsewhere.
