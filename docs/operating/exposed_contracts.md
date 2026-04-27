@@ -86,7 +86,7 @@ Typical build outputs include:
 
 Evaluate:
 
-- whether the released version's exposed contracts match the intended slice
+- whether the released version's exposed contracts match the intended request
 - whether the contract changed
 - whether the change is breaking, additive, or internal-only
 - whether the contract artifacts are sufficient for consumers

@@ -105,7 +105,7 @@ A new repository should start with this order:
 6. run `extract` to build the first model baseline
 7. run `refine` to create the first slice
 8. run `build` to implement the first executable vertical slice
-9. run `egd` before deciding `release`
+9. run `egd` against the request before deciding `release`
 
 After each completed and verified repository change, commit the result with a focused Conventional Commit before starting unrelated work. This keeps the starter's artifact memory aligned with Git history instead of relying on an operator's active working tree.
 

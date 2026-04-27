@@ -216,3 +216,24 @@ Rely on end-of-session commits or leave commit timing to each operator. This was
 
 ### Notes
 If a change must remain uncommitted temporarily, record why in the active change artifact or tell the operator explicitly.
+
+## DEC-0008 - Run EGD Against Requests
+
+- Date: 2026-04-27
+- Status: accepted
+- Owners: both
+
+### Context
+The workflow described EGD as if the slice were the primary review boundary. Slices are useful implementation increments, but a user request can be broader than one slice or can require checking whether several slice-level decisions add up to the intended change.
+
+### Decision
+EGD should run against the request. Slice documents, implementation artifacts, tests, and scenario packets are evidence for the request-level review, not the boundary of the review itself. Release should likewise decide whether the request has been satisfied well enough to accept internally.
+
+### Consequences
+Expectation-gap review is less likely to miss omissions that sit between slices. EGD artifacts and run folders should be keyed by request or change id when practical. Build and refine can remain slice-oriented because implementation still benefits from bounded increments.
+
+### Alternatives considered
+Keep EGD slice-oriented and rely on release to detect request-level gaps. This was rejected because EGD is the phase explicitly responsible for finding expectation gaps before acceptance.
+
+### Notes
+A request may still map to a single slice. In that case, request-level EGD should be lightweight and can use the one slice as its main evidence packet.

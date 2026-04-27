@@ -47,7 +47,7 @@ Turn extracted signals into bounded model hypotheses and slice definitions.
 Implement one slice in code with deterministic tests.
 
 ### `egd`
-Run expectation-gap detection against realistic execution evidence. Default to lightweight artifact-led review first, and prefer fuller Ollama-backed scenario evaluation once deterministic scenario evidence exists.
+Run expectation-gap detection for the request against realistic execution evidence. Use slices as implementation and evidence units, but keep the request as the review boundary. Default to lightweight artifact-led review first, and prefer fuller Ollama-backed scenario evaluation once deterministic scenario evidence exists.
 
 ### `release`
 Accept the current state as the intended internal version.
@@ -82,7 +82,7 @@ request.md
   -> docs/semantics/domain_background_knowledge.md
   -> docs/slices/<slice>.md
   -> code + tests + implementation notes
-  -> runs/<slice>/<timestamp>/...
+  -> runs/<request-or-change-id>/<timestamp>/...
   -> release_decision.md
 ```
 
