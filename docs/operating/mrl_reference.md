@@ -72,6 +72,8 @@ Capture the feedback, friction, surprises, and drift created by exposure.
 
 Each phase should read explicit files, write explicit files, and avoid depending on prior conversational memory.
 
+Completed changes should be committed immediately after verification. A completed change is any accepted update to workflow artifacts, semantic artifacts, slice documents, code, tests, or release/exposure evidence that should survive beyond the current execution context.
+
 Typical artifact chain:
 
 ```text

@@ -335,6 +335,21 @@ Each phase should:
 - read explicit artifacts
 - write explicit artifacts
 - avoid depending on conversational memory
+- commit each completed, verified change before starting unrelated work
+
+---
+
+## Completion Discipline
+
+A change is complete when its intended artifact or code update has been written, checked at the appropriate level, and is ready to become repository memory.
+
+After every completed change:
+
+- review the diff for scope
+- run the relevant lightweight validation, or record why no validation applies
+- create a focused Conventional Commit before moving to unrelated work
+
+Do not rely on an open working tree as process memory. If a change is intentionally left uncommitted, record the reason in the active change artifact or tell the operator explicitly.
 
 ---
 

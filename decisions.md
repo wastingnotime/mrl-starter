@@ -195,3 +195,24 @@ Treat observability as a runtime-only concern discovered inside an APM after dep
 
 ### Notes
 This is not a mandatory rule for every MRL repository. It is intended for repositories or repository families whose running systems are expected to be monitored and consumed through stable operational signals.
+
+## DEC-0007 - Commit Completed Changes Immediately
+
+- Date: 2026-04-27
+- Status: accepted
+- Owners: both
+
+### Context
+MRL treats repository artifacts as durable memory and execution contexts as stateless. Leaving completed work only in the active working tree makes the workflow depend on hidden operator state and weakens handoff between isolated phases.
+
+### Decision
+After every completed and verified repository change, the operator should create a focused Conventional Commit before starting unrelated work. This applies to workflow artifacts, semantic artifacts, slice documents, code, tests, and release or exposure evidence.
+
+### Consequences
+Repository history becomes part of the MRL memory model. Isolated phase runs can trust committed state more easily, but operators must avoid batching unrelated changes just because they occurred in the same session.
+
+### Alternatives considered
+Rely on end-of-session commits or leave commit timing to each operator. This was rejected because it preserves too much hidden state between completed changes.
+
+### Notes
+If a change must remain uncommitted temporarily, record why in the active change artifact or tell the operator explicitly.
