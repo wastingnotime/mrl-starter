@@ -303,3 +303,24 @@ Fold these responsibilities into `extract` or `refine`. This was rejected becaus
 
 ### Notes
 `adoption-diagnose` may write `work/adoption_diagnosis.md` when a durable report is useful. `guidance` is read-only by default.
+
+## DEC-0012 - Surface Adoption Diagnosis At Repository Entry
+
+- Date: 2026-04-27
+- Status: accepted
+- Owners: both
+
+### Context
+Some adoption decisions should happen early, before substantial project-specific work makes starter defaults harder to distinguish from intentional choices. `AGENTS.md` is the first repository guidance many Codex sessions read, so it is the right place to surface that check.
+
+### Decision
+`AGENTS.md` should instruct agents to consider `adoption-diagnose` on the first pass through repository guidance before substantial project-specific work, especially when licensing, README content, selected pack, semantic placeholders, or other starter-adoption decisions are not clearly settled in artifacts.
+
+### Consequences
+Agents get an early reminder to check adoption readiness without making `adoption-diagnose` part of every loop phase. The check remains conditional: once the repository artifacts clearly show those decisions are settled, normal phase work can proceed without repeating the audit.
+
+### Alternatives considered
+Require `adoption-diagnose` before every skill run. This was rejected because it would add noise after adoption decisions are already explicit.
+
+### Notes
+This is an entry guardrail, not a substitute for owner decisions.

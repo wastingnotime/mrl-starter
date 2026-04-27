@@ -1,6 +1,6 @@
 ---
 name: adoption-diagnose
-description: Diagnose whether an adopting repository has intentionally replaced starter defaults with project-specific artifacts. Use when the repository owner wants a readiness check for licensing, README content, selected pack, starter placeholders, semantic artifacts, or other adoption residue without changing production code.
+description: Diagnose whether an adopting repository has intentionally replaced starter defaults with project-specific artifacts. Consider on the first pass through repository guidance before substantial project-specific work, and use when the repository owner wants a readiness check for licensing, README content, selected pack, starter placeholders, semantic artifacts, or other adoption residue without changing production code.
 ---
 
 # Mission
