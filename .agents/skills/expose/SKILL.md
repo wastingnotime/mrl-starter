@@ -1,17 +1,17 @@
 ---
 name: expose
-description: Prepare or record exposure of a released slice to a real context in the MRL loop. Use when the internal released state is accepted and the next step is to define or capture how that state is exposed to users, stakeholders, workflows, or environments without treating this as long-term operations ownership.
+description: Prepare or record exposure of an accepted request state to a real context in the MRL loop. Use when the internal released state is accepted and the next step is to define or capture how that state is exposed to users, stakeholders, workflows, or environments without treating this as long-term operations ownership.
 ---
 
 # Mission
 
-Define or record how a released slice is put into contact with reality.
+Define or record how an accepted request state is put into contact with reality.
 
 # Read First
 
 - `docs/operating/skills_workflow.md`
 - `work/changes/<id>/release_decision.md`
-- relevant slice and implementation artifacts
+- relevant request, slice, and implementation artifacts
 
 # Inputs
 

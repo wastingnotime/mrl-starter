@@ -252,11 +252,13 @@ Notes:
 
 **Goal**
 
-- declare that the current model state is the accepted internal version
-- package the outcome of the loop as the current intended state
+- declare whether the implemented request state is the accepted internal version
+- package the request outcome as the current intended state
 
 **Input**
 
+- request artifact
+- request-to-slice map
 - implementation state
 - test evidence
 - EGD findings
@@ -265,7 +267,7 @@ Notes:
 **Output**
 
 - release decision
-- accepted version state
+- accepted request state
 
 **Must not**
 

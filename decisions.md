@@ -258,3 +258,24 @@ Store this mapping only inside each slice document or rely on `impact_analysis.m
 
 ### Notes
 For a one-slice request, the map should still exist but can be short.
+
+## DEC-0010 - Release Requests, Not Slices
+
+- Date: 2026-04-27
+- Status: accepted
+- Owners: both
+
+### Context
+EGD now evaluates request satisfaction and `refine` records request-to-slice traceability. Release must use the same boundary or it can accept a slice that is locally complete while the request remains incomplete.
+
+### Decision
+`release` accepts, rejects, or returns the implemented request state. Slice documents and implementations are evidence for the release decision, but they are not the release boundary.
+
+### Consequences
+Release decisions align with request-level EGD and the request-to-slice map. Exposure and feedback should refer to the accepted request state, while still preserving links to the supporting slices and implementation artifacts.
+
+### Alternatives considered
+Keep release slice-oriented and rely on EGD to report request-level gaps. This was rejected because acceptance should happen at the same boundary as expectation-gap review.
+
+### Notes
+When a request maps to exactly one slice, the release evidence may be short but should still name the request being accepted.

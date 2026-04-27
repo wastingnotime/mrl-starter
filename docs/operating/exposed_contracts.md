@@ -130,7 +130,7 @@ Repositories that adopt exposed contracts should classify changes at least as:
 - `additive`: new surface added without invalidating expected existing usage
 - `internal-only`: no exposed consumer-facing contract changed
 
-This classification should appear in release evidence when a slice touches an exposed interface.
+This classification should appear in release evidence when the request touches an exposed interface.
 
 ---
 
@@ -151,7 +151,7 @@ For repositories early in refinement, a concise tracked contract summary is acce
 
 ## Exposure Evidence Rule
 
-When a slice exposes a contract-bearing artifact, `work/changes/<id>/exposure.md` should include:
+When a request exposes a contract-bearing artifact, `work/changes/<id>/exposure.md` should include:
 
 - the contract locations or URLs
 - the contract version or digest when relevant

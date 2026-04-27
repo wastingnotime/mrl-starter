@@ -50,7 +50,7 @@ Implement one slice in code with deterministic tests.
 Run expectation-gap detection for the request against realistic execution evidence. Use slices as implementation and evidence units, but keep the request as the review boundary. Default to lightweight artifact-led review first, and prefer fuller Ollama-backed scenario evaluation once deterministic scenario evidence exists.
 
 ### `release`
-Accept the current state as the intended internal version.
+Accept the implemented request state as the intended internal version.
 
 ### `expose`
 Put the released state into contact with a real context.

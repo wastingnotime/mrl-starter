@@ -1,6 +1,6 @@
 ---
 name: feedback
-description: Capture post-exposure evidence for the MRL loop. Use when an exposed slice has begun generating real feedback, surprises, friction, or drift and the next step is to turn those signals into explicit artifacts that feed back into extract.
+description: Capture post-exposure evidence for the MRL loop. Use when an exposed accepted request state has begun generating real feedback, surprises, friction, or drift and the next step is to turn those signals into explicit artifacts that feed back into extract.
 ---
 
 # Mission
@@ -11,7 +11,7 @@ Capture the evidence produced after exposure and turn it into the next loop inpu
 
 - `docs/operating/skills_workflow.md`
 - relevant exposure artifacts
-- relevant release decision and slice docs
+- relevant release decision, request, and slice docs
 
 # Inputs
 
@@ -24,7 +24,7 @@ Capture the evidence produced after exposure and turn it into the next loop inpu
 # Must Do
 
 - capture new evidence explicitly
-- connect observed behavior back to the relevant slice or request
+- connect observed behavior back to the relevant request and supporting slices
 - prepare the next extraction pass with traceable artifacts
 
 # Must Not Do
