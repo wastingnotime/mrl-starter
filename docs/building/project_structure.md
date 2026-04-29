@@ -66,6 +66,7 @@ project_root/
   work/
     sources/
     changes/
+    findings/
 
   pyproject.toml               # only when a Python pack uses it
   package.json                 # only when a JavaScript/TypeScript pack uses it
@@ -138,6 +139,7 @@ Contains tracked working artifacts that preserve loop traceability without promo
 
 - `work/sources/`: canonical folder for curated raw evidence and original source material
 - `work/changes/`: bounded request artifacts and phase-local handoff material tied to a specific change, including request-to-slice maps when refinement has occurred
+- `work/findings/`: repository-local findings that record cross-repo mismatches, evidence, and ownership without implementing foreign fixes
 - `work/adoption_diagnosis.md`: optional adoption readiness report produced by `adoption-diagnose`
 
 `work/` is repository memory, not personal scratch space.
