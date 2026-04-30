@@ -5,6 +5,8 @@ This repository is an MRL starter. Strategic docs live at the root and working d
 
 On the first pass through this repository's guidance, consider `.agents/skills/adoption-diagnose/SKILL.md` before substantial project-specific work. Use it when licensing, README content, selected pack, semantic placeholders, or other starter-adoption decisions have not clearly been settled in repository artifacts.
 
+If a locally observed issue belongs to another repository, use `docs/operating/cross_repo_findings.md` and record the evidence under `work/findings/` instead of turning it into a hidden cross-repo fix.
+
 Use this structure as the default shape:
 
 ```text

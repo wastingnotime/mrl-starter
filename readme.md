@@ -55,6 +55,8 @@ Then start the loop:
 
 Use `adoption-diagnose` when you want to check whether the copied starter has been intentionally adopted, especially around licensing, README content, pack selection, and placeholder artifacts. Use `guidance` when the repository owner needs help understanding MRL phases or artifacts without changing files.
 
+If you discover a mismatch that belongs to another repository, record it under `work/findings/` and follow `docs/operating/cross_repo_findings.md` for the local handling pattern.
+
 The semantic placeholders in `docs/semantics/` are intentionally empty. They are meant to be filled by the `extract` phase, not by copying domain content from this starter.
 Preserve original evidence in `work/sources/` before extraction or refinement artifacts are produced elsewhere.
 
