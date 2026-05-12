@@ -2,6 +2,8 @@
 
 This folder stores repository-local findings that identify a mismatch or unexpected behavior owned by another repository.
 
+Follow `docs/operating/cross_repo_findings_guidance.md` and the global `cross-repo-findings` skill when using it.
+
 Use one subfolder per finding:
 
 ```text

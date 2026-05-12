@@ -335,7 +335,7 @@ This is an entry guardrail, not a substitute for owner decisions.
 This repository needs a durable way to record observations that reveal a mismatch owned by another repository without collapsing that observation into implementation work or hidden cross-repo coupling.
 
 ### Decision
-Record cross-repository findings under `work/findings/<date>-<short-name>/finding.md`, and keep the handling guidance in `docs/operating/cross_repo_findings.md`.
+Record cross-repository findings under `work/findings/<date>-<short-name>/finding.md`, and keep the handling guidance in `docs/operating/cross_repo_findings_guidance.md`.
 
 ### Consequences
 The repository gains a consistent location for evidence-backed observations, ownership notes, and local mitigation. The finding stays separate from implementation artifacts, which makes handoff cleaner and reduces the risk of accidental cross-repo fixes.
