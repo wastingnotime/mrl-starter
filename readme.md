@@ -57,6 +57,8 @@ Use `adoption-diagnose` when you want to check whether the copied starter has be
 
 If you discover a mismatch that belongs to another repository, record it under `work/findings/` and follow `docs/operating/cross_repo_findings_guidance.md` for the local handling pattern.
 
+Issue-close Discord notifications are handled by `.github/workflows/notify-discord-on-issue-close.yml` and require a `DISCORD_BOT_TOKEN` secret in each repo that uses it.
+
 The semantic placeholders in `docs/semantics/` are intentionally empty. They are meant to be filled by the `extract` phase, not by copying domain content from this starter.
 Preserve original evidence in `work/sources/` before extraction or refinement artifacts are produced elsewhere.
 
