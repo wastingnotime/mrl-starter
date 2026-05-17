@@ -4,6 +4,11 @@
 
 This repository is a starter template for the Model Refinement Lab.
 
+## Scope
+
+This document describes the starter repository and its adoption path.
+It does not define project-specific behavior for repositories generated from the starter.
+
 Use it to begin a new repository that follows the MRL loop:
 
 ```text

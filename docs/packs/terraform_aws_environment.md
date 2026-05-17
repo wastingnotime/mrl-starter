@@ -4,6 +4,11 @@
 
 Use this pack when the primary work surface is Terraform-managed AWS infrastructure.
 
+## Scope
+
+This pack defines reusable implementation defaults.
+It does not define MRL core behavior or project-specific domain behavior.
+
 This pack exists to define reusable implementation defaults for repositories whose main behavior is infrastructure definition, migration, and controlled environment evolution rather than application runtime logic.
 
 ---

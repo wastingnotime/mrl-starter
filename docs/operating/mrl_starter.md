@@ -4,47 +4,93 @@
 
 This document defines the minimal portable shape for adopting the Model Refinement Lab in a new repository.
 
+## Scope
+
+This document defines MRL core starter guidance: how a repository can adopt the refinement framework without becoming the framework.
+It does not define the adopting project's domain behavior, system architecture, or operational governance.
+
 Use it when creating a fresh project that should follow the same refinement discipline without copying domain-specific content from this repository. The practical instantiation flow is to clone the starter into a new repository name and then let `extract` create the first semantic baseline.
 
 ---
 
-## Split the Repository Into Two Parts
+## Separate Core From Instance
+
+MRL has two layers:
+
+- MRL core: the framework, phase grammar, artifact discipline, and portable refinement guidance
+- Project instance: the concrete repository using MRL to evolve a domain, system, or product
+
+The same artifact names may exist in both layers. A project can have its own `architecture.md`, `groundrules.md`, and `decisions.md` without those files defining MRL itself.
 
 ### MRL core
 
-These parts should be portable across domains:
+These parts define portable MRL behavior or reusable framework guidance:
+
+- `.agents/skills/`
+- `docs/operating/`
+- generic evaluation guidance under `docs/evaluation/`
+- generic pack definitions under `docs/packs/`
+
+MRL core artifacts should stay generic, portable, organization-agnostic, and operationally agnostic.
+
+### Project instance
+
+These parts belong to the repository using MRL and should be rewritten or filled in for each new domain:
 
 - `readme.md`
+- `architecture.md`
 - `groundrules.md`
 - `decisions.md`
 - `AGENTS.md`
-- `.agents/skills/`
-- `docs/operating/`
-- evaluator pattern
-- semantic docs
-- slice docs
+- `docs/semantics/model_hypothesis.md`
+- `docs/semantics/domain_background_knowledge.md`
+- `docs/slices/`
+- `work/sources/`
+- `work/changes/`
+- local evaluation artifacts under `runs/`
+
+Project-instance artifacts describe the adopting repository's architecture, constraints, domain model, decisions, assumptions, and refinement history. They do not modify MRL core behavior.
 
 ### Pack-specific
 
 These parts define language and architecture defaults and may be replaced:
 
-- `architecture.md`
 - `docs/building/project_structure.md`
-- `docs/packs/`
 - scenario runner pattern
 - test shape
 - code under `src/`
 - tests under `tests/`
 - language toolchain files such as `pyproject.toml`, `package.json`, or `go.mod`
 
-### Project-specific
+### Optional overlays
 
-These parts should be rewritten for each new domain:
+Operational coordination concerns are not part of MRL core. Examples include campaigns, release coordination, organizational governance, and company-specific collaboration workflows.
 
-- `docs/semantics/model_hypothesis.md`
-- `docs/semantics/domain_background_knowledge.md`
-- `docs/slices/`
-- local evaluation artifacts under `runs/`
+Those concerns may be added by an adopting organization through overlays, optional skills, or external frameworks, but they should not be embedded into the starter as core MRL behavior.
+
+---
+
+## Scope Rule For Artifacts
+
+Each durable artifact should make its ownership scope explicit when the scope is not obvious from its path.
+
+Use this wording shape for MRL core artifacts:
+
+```md
+## Scope
+
+This document defines MRL framework behavior.
+It does not define project-specific behavior.
+```
+
+Use this wording shape for project-instance artifacts:
+
+```md
+## Scope
+
+This document defines project-specific refinement behavior and system evolution.
+It does not modify MRL core behavior.
+```
 
 ---
 
@@ -125,15 +171,15 @@ When a project needs different terms, a split-license model is also valid. A pra
 - keep MRL process artifacts and reusable template-style material under a permissive license
 - place project-specific implementation code and runtime assets under the license that fits the shipped product
 
-Typical process or template-style material includes:
+Typical MRL core or template-style material includes:
 
-- `readme.md`, `groundrules.md`, `decisions.md`, and `AGENTS.md`
 - `docs/operating/`
 - generic pack definitions under `docs/packs/`
 - generic skill instructions under `.agents/skills/`
 
 Typical project-specific material includes:
 
+- root strategic docs such as `readme.md`, `architecture.md`, `groundrules.md`, `decisions.md`, and `AGENTS.md`
 - code under `src/`
 - tests under `tests/`
 - domain-specific semantic artifacts under `docs/semantics/`

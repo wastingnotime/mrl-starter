@@ -4,6 +4,11 @@
 
 Use this pack when the primary model is represented through events, streams, projections, and replayable state transitions.
 
+## Scope
+
+This pack defines reusable implementation defaults.
+It does not define MRL core behavior or project-specific domain behavior.
+
 ---
 
 ## Shape

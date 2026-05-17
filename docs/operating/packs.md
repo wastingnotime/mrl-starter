@@ -4,6 +4,11 @@
 
 This document defines how implementation packs relate to the MRL core.
 
+## Scope
+
+This document defines MRL core rules for pack selection and pack boundaries.
+It does not make a specific project architecture mandatory.
+
 Use it when an adopting repository needs to choose a language, architecture, runtime topology, or test shape without rewriting the MRL loop itself.
 
 ---

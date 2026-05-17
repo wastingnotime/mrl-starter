@@ -4,6 +4,11 @@
 
 This document defines how repositories can treat observability signals as an explicit operational surface rather than discovering them only after deployment inside an APM or logging platform.
 
+## Scope
+
+This document defines optional project-instance policy guidance for exposed observability.
+It does not make observability governance a universal MRL core requirement.
+
 Use it when a released artifact is expected to be operated, monitored, alerted on, or debugged by people or systems that need to know what telemetry should exist before or during exposure.
 
 ---

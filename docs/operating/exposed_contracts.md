@@ -4,6 +4,11 @@
 
 This document defines how repositories can treat external APIs, emitted events, and other consumable interfaces as explicit exposed contracts rather than leaving them implicit in code or runtime behavior.
 
+## Scope
+
+This document defines optional project-instance policy guidance for exposed contracts.
+It does not make contract publication a universal MRL core requirement.
+
 Use it when a released artifact is intended to be consumed by other systems, repositories, operators, or teams that need to know what interfaces the artifact offers and how those interfaces change over time.
 
 ---

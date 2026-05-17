@@ -4,6 +4,11 @@
 
 This document records relevant architectural and implementation decisions for the adopting repository.
 
+## Scope
+
+This document is a project-instance decision log. In this starter repository, entries may explain starter defaults and example choices.
+In a generated project, this file should record that project's decisions and should not be treated as the MRL core decision log.
+
 Use it to preserve reasoning, avoid re-discussing settled trade-offs without context, and document deviations from `architecture.md` and `groundrules.md`.
 
 ---
@@ -324,3 +329,26 @@ Require `adoption-diagnose` before every skill run. This was rejected because it
 
 ### Notes
 This is an entry guardrail, not a substitute for owner decisions.
+
+## DEC-0013 - Separate MRL Core Scope From Project Instance Scope
+
+- Date: 2026-05-17
+- Status: accepted
+- Owners: both
+
+### Context
+Some starter artifacts can describe both MRL itself and the concrete repository using MRL. When documents such as `architecture.md`, `groundrules.md`, and `decisions.md` lack an explicit ownership scope, generated projects can start behaving as if they are MRL rather than systems that use MRL.
+
+### Decision
+Every durable artifact should make its ownership scope explicit when the scope is not obvious from its path. MRL core artifacts define framework behavior, artifact grammar, phase semantics, and portable refinement discipline. Project-instance artifacts define the adopting repository's architecture, constraints, decisions, semantic model, slices, and local refinement history.
+
+Root strategic documents in generated repositories are project-instance artifacts by default. MRL core guidance belongs under `docs/operating/` unless a repository intentionally extracts it into a dedicated core repository.
+
+### Consequences
+The starter can remain portable without making generated repositories appear to be MRL itself. Adopting repositories gain clearer permission to rewrite project-owned artifacts while preserving the framework-level loop and artifact discipline.
+
+### Alternatives considered
+Treat root strategic documents as MRL core artifacts. This was rejected because the same names are needed inside adopting repositories for project-owned architecture, rules, and decisions.
+
+### Notes
+Operational coordination concerns remain outside MRL core. They can exist as organization overlays, optional skills, or external frameworks, but they should not be embedded into the starter as core behavior.

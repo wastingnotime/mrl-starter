@@ -1,7 +1,12 @@
 # Repository Guidelines
 
+## Scope
+This file guides contributors working in this repository or an adopting project instance. It does not define MRL core behavior; core workflow guidance lives in `docs/operating/`.
+
 ## Project Structure & Module Organization
 This repository is an MRL starter. Strategic docs live at the root and working design material lives under `docs/`. Read `docs/operating/mrl_reference.md` and `docs/operating/skills_workflow.md` before changing the workflow.
+
+Root strategic docs describe the current repository or adopting project instance. MRL core behavior lives in `docs/operating/` and should stay generic, portable, and operationally agnostic.
 
 On the first pass through this repository's guidance, consider `.agents/skills/adoption-diagnose/SKILL.md` before substantial project-specific work. Use it when licensing, README content, selected pack, semantic placeholders, or other starter-adoption decisions have not clearly been settled in repository artifacts.
 

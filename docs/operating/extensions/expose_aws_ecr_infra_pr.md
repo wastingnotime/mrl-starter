@@ -4,6 +4,11 @@
 
 Use this expose extension when a repository normally exposes accepted artifacts by publishing a container image through GitHub Actions to AWS ECR and then handing deployment intent to a separate infrastructure repository through a pull request.
 
+## Scope
+
+This document is an optional exposure overlay.
+It does not define MRL core behavior or a mandatory project deployment path.
+
 This extension keeps MRL core generic while making a recurring remote-infrastructure exposure path explicit and reusable.
 
 ---

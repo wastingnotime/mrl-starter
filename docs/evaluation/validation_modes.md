@@ -4,6 +4,11 @@
 
 This document describes how different systems reveal expectation gaps during MRL.
 
+## Scope
+
+This document defines portable MRL evaluation guidance.
+Project-specific validation mode choices belong to the project instance and should be recorded in slice or decision artifacts when they affect implementation.
+
 Use it to decide how slices should be validated, how tightly runtime surfaces should stay coupled during construction, and how much of the loop depends on structural inspection versus lived interaction.
 
 Validation mode describes the dominant way expectation gaps are discovered in the current project or slice. It is a practical guide, not a rigid taxonomy.

@@ -4,6 +4,11 @@
 
 Use this pack when one bounded model spans more than one runtime, such as a browser client and a server process.
 
+## Scope
+
+This pack defines reusable implementation defaults.
+It does not define MRL core behavior or project-specific domain behavior.
+
 This is the pack to prefer when the semantics are shared but execution is intentionally split across technologies.
 
 ---

@@ -4,6 +4,11 @@
 
 This document captures broad background knowledge about the target domain.
 
+## Scope
+
+This document is a project-instance semantic artifact.
+It records domain reference context for the adopting project and does not modify MRL core behavior.
+
 It is not the repository's extracted glossary. It is reference material distilled from books, articles, standards, external systems, or other domain sources.
 
 Use it mainly during expectation-gap detection.

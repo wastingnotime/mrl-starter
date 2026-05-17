@@ -4,6 +4,11 @@
 
 This document defines the architectural shape selected for this repository. Its goal is to give AI coding agents and humans a stable base for implementation decisions, naming, boundaries, and trade-offs without implying that one architecture is mandatory for all MRL repositories.
 
+## Scope
+
+This document is a project-instance artifact. It defines the selected architecture for this repository's current example implementation space.
+It does not define MRL core behavior.
+
 This project is **not** intended to be a full production rewrite of the current system. It is a **model laboratory** used to:
 
 - refine business models currently represented on model hypothesis

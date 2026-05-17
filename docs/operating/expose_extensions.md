@@ -4,6 +4,11 @@
 
 This document defines how repositories can add reusable exposure mechanisms without redefining MRL core or turning exposure behavior into an implementation pack.
 
+## Scope
+
+This document defines optional extension boundaries around the MRL `expose` phase.
+It does not define MRL core deployment behavior or organization-specific release coordination.
+
 Use it when a repository repeatedly exposes released artifacts through the same operational path and wants that path to be explicit, reusable, and optional.
 
 ---

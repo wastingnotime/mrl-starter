@@ -4,6 +4,11 @@
 
 This document is the compact reference for the Model Refinement Lab.
 
+## Scope
+
+This document defines MRL core behavior: the refinement loop, phase semantics, artifact discipline, and portability expectations.
+It does not define project-specific architecture, domain behavior, or operational governance.
+
 Use it to rebuild context quickly in a fresh session, a bounded skill run, or a new repository that adopts the same workflow.
 
 ---

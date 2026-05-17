@@ -4,11 +4,17 @@
 
 This document defines the intended folder layout and file responsibilities for the project.
 
+## Scope
+
+This document is pack-aware project-instance guidance. It defines the expected structure for a repository using a selected implementation pack.
+It does not define MRL core behavior.
+
 Its purpose is to give AI coding agents and humans a concrete structural map so implementation can evolve coherently without each contributor inventing a different organization.
 
 The structure is split into:
 
-- MRL core artifacts that every adopting repository should keep
+- MRL core artifacts that every adopting repository should keep as framework guidance
+- project-instance artifacts that each adopting repository owns
 - pack-specific implementation layouts that can vary by language and architecture
 
 If a change becomes necessary, register the reasoning in `decisions.md`.
@@ -88,7 +94,7 @@ project_root/
 ## Top-Level Responsibility of Each Area
 
 ### Root documents
-These files define project intent and coordination rules.
+These files are project-instance artifacts. They define project intent, architecture, constraints, decisions, and contributor guidance for the repository using MRL.
 
 - `readme.md`: repository overview
 - `architecture.md`: architectural direction

@@ -4,6 +4,11 @@
 
 This document defines the first implementation path for a new repository using MRL.
 
+## Scope
+
+This document is project-instance bootstrap guidance.
+It does not define MRL core phase behavior.
+
 ---
 
 ## Sequence

@@ -4,6 +4,11 @@
 
 This document defines how the project should evaluate implemented behavior beyond classic unit and integration correctness.
 
+## Scope
+
+This document defines reusable expectation-gap evaluation guidance for repositories using MRL.
+Project-specific scenario definitions, evidence packets, and review outputs belong to the project instance.
+
 Its goal is to support **expectation gap detection**:
 
 - identify plausible domain expectations that are absent

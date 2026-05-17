@@ -4,6 +4,11 @@
 
 This document defines implementation rules for AI coding agents and humans working on this project.
 
+## Scope
+
+This document is a project-instance artifact. It defines local implementation constraints for this repository or an adopting project.
+It does not modify MRL core principles, phase behavior, or artifact semantics.
+
 Its purpose is to preserve architectural coherence while allowing incremental progress.
 
 These rules should be treated as default constraints unless a deliberate architectural decision explicitly overrides them.
@@ -428,4 +433,3 @@ The default posture for this project is:
 - explicit code over clever code
 
 When unsure, optimize for clarity and model quality, not for production mimicry.
-
