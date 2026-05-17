@@ -352,3 +352,28 @@ Treat root strategic documents as MRL core artifacts. This was rejected because 
 
 ### Notes
 Operational coordination concerns remain outside MRL core. They can exist as organization overlays, optional skills, or external frameworks, but they should not be embedded into the starter as core behavior.
+
+## DEC-0014 - Promote Go Service Pack From Delivered API Evidence
+
+- Date: 2026-05-17
+- Status: accepted
+- Owners: both
+
+### Context
+The starter listed `go_service` as a suggested implementation pack, but it did not include a concrete reusable pack document. The `axiom-exp-contacts` repository grew from this starter and delivered a Go API runtime with useful repeated patterns: explicit `cmd/` entrypoints, `internal/` service boundaries, HTTP as an adapter, runtime composition, deterministic scenario runners, and container-oriented packaging.
+
+### Decision
+Add `docs/packs/go_service.md` to the starter as a generic pack for API-first Go services.
+
+The pack captures reusable structure and boundaries from the delivered API project while excluding project-specific concerns such as contact routes, exact environment variable names, vendor-specific observability settings, ECR publication, and repository dispatch mechanics.
+
+### Consequences
+New adopting repositories that need a Go API service can select a documented pack instead of inventing layout, runtime composition, and validation conventions from scratch. The starter also demonstrates how learning from an adopted repository can feed back into reusable pack guidance without changing MRL core behavior.
+
+### Alternatives considered
+Keep `go_service` listed only as a future pack. This was rejected because a real delivered API now provides enough evidence to define the reusable defaults.
+
+Copy the `axiom-exp-contacts` pack verbatim. This was rejected because it would preserve project-specific assumptions that do not belong in the starter.
+
+### Notes
+Deployment and promotion mechanics should remain in expose extensions, lifecycle scripts, or repository-specific decisions. They should not be encoded as generic `go_service` pack behavior.
