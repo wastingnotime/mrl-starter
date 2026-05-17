@@ -233,7 +233,7 @@ EGD should run against the request. Slice documents, implementation artifacts, t
 Expectation-gap review is less likely to miss omissions that sit between slices. EGD artifacts and run folders should be keyed by request or change id when practical. Build and refine can remain slice-oriented because implementation still benefits from bounded increments.
 
 ### Alternatives considered
-Keep EGD slice-oriented and rely on release to detect request-level gaps. This was rejected because EGD is the phase explicitly responsible for finding expectation gaps before acceptance.
+Keep EGD slice-oriented and rely on release to detect request-level gaps. This was rejected because EGD is the phase explicitly responsible for detecting expectation gaps before acceptance.
 
 ### Notes
 A request may still map to a single slice. In that case, request-level EGD should be lightweight and can use the one slice as its main evidence packet.
@@ -324,24 +324,3 @@ Require `adoption-diagnose` before every skill run. This was rejected because it
 
 ### Notes
 This is an entry guardrail, not a substitute for owner decisions.
-
-## DEC-0013 - Record Cross-Repository Findings Under `work/findings/`
-
-- Date: 2026-04-29
-- Status: accepted
-- Owners: both
-
-### Context
-This repository needs a durable way to record observations that reveal a mismatch owned by another repository without collapsing that observation into implementation work or hidden cross-repo coupling.
-
-### Decision
-Record cross-repository findings under `work/findings/<date>-<short-name>/finding.md`, and keep the handling guidance in `docs/operating/cross_repo_findings_guidance.md`.
-
-### Consequences
-The repository gains a consistent location for evidence-backed observations, ownership notes, and local mitigation. The finding stays separate from implementation artifacts, which makes handoff cleaner and reduces the risk of accidental cross-repo fixes.
-
-### Alternatives considered
-Keep findings only in ad hoc notes or fold them into `work/changes/`. This was rejected because cross-repo observations are not the same thing as in-repo change requests.
-
-### Notes
-The discovering repository may add validation or diagnostics locally, but it should not implement the owning repository's fix.

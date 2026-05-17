@@ -35,8 +35,8 @@ Audit whether the repository has moved from MRL starter state into an intentiona
 - check whether root strategic docs are project-specific enough for the current adoption stage
 - check whether semantic docs and slice/change artifacts still contain starter placeholders
 - check whether the selected implementation pack is recorded or intentionally replaced
-- classify findings by severity: blocker, warning, or note
-- write or update `work/adoption_diagnosis.md` when a durable report is requested or when findings are non-trivial
+- classify observations by severity: blocker, warning, or note
+- write or update `work/adoption_diagnosis.md` when a durable report is requested or when observations are non-trivial
 - recommend the next MRL phase or owner decision when adoption gaps are found
 
 # Must Not Do
@@ -49,6 +49,6 @@ Audit whether the repository has moved from MRL starter state into an intentiona
 
 # Outputs
 
-- adoption readiness findings
+- adoption readiness observations
 - optional `work/adoption_diagnosis.md`
 - recommended follow-up decisions or MRL phases

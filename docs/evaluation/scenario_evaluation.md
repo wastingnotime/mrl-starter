@@ -543,7 +543,7 @@ Your job is to review a completed scenario execution and identify plausible expe
 
 Do not act as a correctness verifier.
 Do not assume every missing behavior is a defect.
-Treat your findings as review hypotheses, not final truths.
+Treat your observations as review hypotheses, not final truths.
 
 A gap is something that:
 - a user, operator, or business stakeholder would plausibly expect
@@ -694,9 +694,9 @@ This markdown is secondary. The JSON report remains the source of truth.
 
 ---
 
-## Triage Of Findings
+## Triage Of Observations
 
-After a report is produced, each finding should be classified.
+After a report is produced, each observation should be classified.
 
 ### 1. Required missing behavior
 Outcome:
@@ -786,7 +786,7 @@ Start with Version 1.
 
 ## Decision Rule
 
-If a recurring finding appears across multiple scenarios, review whether it should become:
+If a recurring observation appears across multiple scenarios, review whether it should become:
 
 - a new use case
 - a new domain event
@@ -813,4 +813,4 @@ The local Ollama reviewer should therefore be treated as:
 - a semantic reviewer
 - a detector of possible omissions
 
-Its findings must be reviewed by humans and/or Codex before changing the model.
+Its outputs must be reviewed by humans and/or Codex before changing the model.

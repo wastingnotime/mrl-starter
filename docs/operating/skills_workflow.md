@@ -274,7 +274,7 @@ Notes:
 - request-to-slice map
 - implementation state
 - test evidence
-- EGD findings
+- EGD review report
 - decision records
 
 **Output**
