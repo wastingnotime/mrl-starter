@@ -365,7 +365,7 @@ The starter listed `go_service` as a suggested implementation pack, but it did n
 ### Decision
 Add `docs/packs/go_service.md` to the starter as a generic pack for API-first Go services.
 
-The pack captures reusable structure and boundaries from the delivered API project while excluding project-specific concerns such as contact routes, exact environment variable names, vendor-specific observability settings, ECR publication, and repository dispatch mechanics.
+The pack captures reusable structure and boundaries from the delivered API project while excluding project-specific concerns such as domain routes, exact environment variable names, vendor-specific observability settings, registry publication, and cross-repository dispatch mechanics.
 
 ### Consequences
 New adopting repositories that need a Go API service can select a documented pack instead of inventing layout, runtime composition, and validation conventions from scratch. The starter also demonstrates how learning from an adopted repository can feed back into reusable pack guidance without changing MRL core behavior.
@@ -392,7 +392,7 @@ That evidence is reusable, but the BFF in the source project is only one concret
 ### Decision
 Expand `docs/packs/polyglot_client_server.md` into a fuller generic multi-runtime pack.
 
-The pack now treats a BFF as optional and language-agnostic. It records reusable guidance for explicit runtime targets, shared contracts, local modes, validation surfaces, and multi-artifact packaging without prescribing Solid, Go, ECR, repository dispatch, or contacts-specific behavior.
+The pack now treats a BFF as optional and language-agnostic. It records reusable guidance for explicit runtime targets, shared contracts, local modes, validation surfaces, and multi-artifact packaging without prescribing concrete frameworks, implementation languages, registries, dispatch mechanisms, or project-specific behavior.
 
 ### Consequences
 Adopting repositories with browser/client and server boundaries get clearer defaults for structure, contracts, tests, and local execution modes. Repositories can still choose SPA-only, client/server, client/BFF/backend, mobile/API, or peer-runtime shapes without changing MRL core.
@@ -402,7 +402,7 @@ The pack becomes more useful but also more opinionated. Projects should still re
 ### Alternatives considered
 Create a separate web-with-BFF pack. This was rejected for now because the reusable learning is about explicit multi-runtime boundaries, not about requiring one web-specific BFF topology.
 
-Tie the BFF guidance to Go because the source project used a Go BFF. This was rejected because BFF is an architectural role, not a language requirement.
+Tie the BFF guidance to the source project's implementation language. This was rejected because BFF is an architectural role, not a language requirement.
 
 ### Notes
 If several future repositories converge on the same web-specific structure, a narrower web delivery pack may be promoted later from repeated evidence.
