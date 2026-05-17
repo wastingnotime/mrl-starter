@@ -60,8 +60,6 @@ Then start the loop:
 
 Use `adoption-diagnose` when you want to check whether the copied starter has been intentionally adopted, especially around licensing, README content, pack selection, and placeholder artifacts. Use `guidance` when the repository owner needs help understanding MRL phases or artifacts without changing files.
 
-Issue-close Discord notifications are handled by `.github/workflows/notify-discord-on-issue-close.yml` and require a `DISCORD_BOT_TOKEN` secret in each repo that uses it.
-
 The semantic placeholders in `docs/semantics/` are intentionally empty. They are meant to be filled by the `extract` phase, not by copying domain content from this starter.
 Preserve original evidence in `work/sources/` before extraction or refinement artifacts are produced elsewhere.
 
