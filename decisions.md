@@ -377,3 +377,32 @@ Copy the `axiom-exp-contacts` pack verbatim. This was rejected because it would 
 
 ### Notes
 Deployment and promotion mechanics should remain in expose extensions, lifecycle scripts, or repository-specific decisions. They should not be encoded as generic `go_service` pack behavior.
+
+## DEC-0015 - Expand Polyglot Client Server Pack From Web Delivery Evidence
+
+- Date: 2026-05-17
+- Status: accepted
+- Owners: both
+
+### Context
+The starter's `polyglot_client_server` pack only described a minimal client/server split. The `contacts-web` repository grew from this starter and exercised a richer web delivery shape: browser runtime, shared contracts, optional BFF boundary, local isolated and integrated modes, preview surfaces, contract tests, and multiple packaged artifacts.
+
+That evidence is reusable, but the BFF in `contacts-web` is only one concrete implementation. A generic pack should not require a BFF and should not tie the BFF concept to Go.
+
+### Decision
+Expand `docs/packs/polyglot_client_server.md` into a fuller generic multi-runtime pack.
+
+The pack now treats a BFF as optional and language-agnostic. It records reusable guidance for explicit runtime targets, shared contracts, local modes, validation surfaces, and multi-artifact packaging without prescribing Solid, Go, ECR, repository dispatch, or contacts-specific behavior.
+
+### Consequences
+Adopting repositories with browser/client and server boundaries get clearer defaults for structure, contracts, tests, and local execution modes. Repositories can still choose SPA-only, client/server, client/BFF/backend, mobile/API, or peer-runtime shapes without changing MRL core.
+
+The pack becomes more useful but also more opinionated. Projects should still record selected runtime names, languages, packaging forms, and deviations in their own `architecture.md` and `decisions.md`.
+
+### Alternatives considered
+Create a separate web-with-BFF pack. This was rejected for now because the reusable learning is about explicit multi-runtime boundaries, not about requiring one web-specific BFF topology.
+
+Tie the BFF guidance to Go because `contacts-web` used a Go BFF. This was rejected because BFF is an architectural role, not a language requirement.
+
+### Notes
+If several future repositories converge on the same web-specific structure, a narrower web delivery pack may be promoted later from repeated evidence.
