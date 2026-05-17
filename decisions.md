@@ -360,7 +360,7 @@ Operational coordination concerns remain outside MRL core. They can exist as org
 - Owners: both
 
 ### Context
-The starter listed `go_service` as a suggested implementation pack, but it did not include a concrete reusable pack document. The `axiom-exp-contacts` repository grew from this starter and delivered a Go API runtime with useful repeated patterns: explicit `cmd/` entrypoints, `internal/` service boundaries, HTTP as an adapter, runtime composition, deterministic scenario runners, and container-oriented packaging.
+The starter listed `go_service` as a suggested implementation pack, but it did not include a concrete reusable pack document. A real adopting project grew from this starter and delivered a Go API runtime with useful repeated patterns: explicit `cmd/` entrypoints, `internal/` service boundaries, HTTP as an adapter, runtime composition, deterministic scenario runners, and container-oriented packaging.
 
 ### Decision
 Add `docs/packs/go_service.md` to the starter as a generic pack for API-first Go services.
@@ -373,7 +373,7 @@ New adopting repositories that need a Go API service can select a documented pac
 ### Alternatives considered
 Keep `go_service` listed only as a future pack. This was rejected because a real delivered API now provides enough evidence to define the reusable defaults.
 
-Copy the `axiom-exp-contacts` pack verbatim. This was rejected because it would preserve project-specific assumptions that do not belong in the starter.
+Copy the source project's pack verbatim. This was rejected because it would preserve project-specific assumptions that do not belong in the starter.
 
 ### Notes
 Deployment and promotion mechanics should remain in expose extensions, lifecycle scripts, or repository-specific decisions. They should not be encoded as generic `go_service` pack behavior.
@@ -385,9 +385,9 @@ Deployment and promotion mechanics should remain in expose extensions, lifecycle
 - Owners: both
 
 ### Context
-The starter's `polyglot_client_server` pack only described a minimal client/server split. The `contacts-web` repository grew from this starter and exercised a richer web delivery shape: browser runtime, shared contracts, optional BFF boundary, local isolated and integrated modes, preview surfaces, contract tests, and multiple packaged artifacts.
+The starter's `polyglot_client_server` pack only described a minimal client/server split. A real adopting project grew from this starter and exercised a richer web delivery shape: browser runtime, shared contracts, optional BFF boundary, local isolated and integrated modes, preview surfaces, contract tests, and multiple packaged artifacts.
 
-That evidence is reusable, but the BFF in `contacts-web` is only one concrete implementation. A generic pack should not require a BFF and should not tie the BFF concept to Go.
+That evidence is reusable, but the BFF in the source project is only one concrete implementation. A generic pack should not require a BFF and should not tie the BFF concept to Go.
 
 ### Decision
 Expand `docs/packs/polyglot_client_server.md` into a fuller generic multi-runtime pack.
@@ -402,7 +402,7 @@ The pack becomes more useful but also more opinionated. Projects should still re
 ### Alternatives considered
 Create a separate web-with-BFF pack. This was rejected for now because the reusable learning is about explicit multi-runtime boundaries, not about requiring one web-specific BFF topology.
 
-Tie the BFF guidance to Go because `contacts-web` used a Go BFF. This was rejected because BFF is an architectural role, not a language requirement.
+Tie the BFF guidance to Go because the source project used a Go BFF. This was rejected because BFF is an architectural role, not a language requirement.
 
 ### Notes
 If several future repositories converge on the same web-specific structure, a narrower web delivery pack may be promoted later from repeated evidence.
